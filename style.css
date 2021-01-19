@@ -1,0 +1,50 @@
+/* base #34495e */
+/* base-light #465f78 */
+:root {
+  --base: #34495e;
+  --base-light: #465f78;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base);
+}
+.grid {
+  width: 40%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 2em;
+}
+
+.grid div {
+  background-color: var(--base-light);
+  outline: 1px solid rgb(204, 200, 200);
+
+  height: 100%;
+}
+
+.new-game {
+  outline: none;
+  border: none;
+  padding: 0.6em 1.5em;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: white;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 70%;
+    height: 60%;
+  }
+}
