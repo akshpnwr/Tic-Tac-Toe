@@ -1,0 +1,22 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "A tic tac toe game",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshpnwr/Tic-Tac-Toe.git"
+  },
+  "author": "akash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshpnwr/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/akshpnwr/Tic-Tac-Toe#readme",
+  "dependencies": {
+    "lodash.chunk": "^4.2.0"
+  }
+}

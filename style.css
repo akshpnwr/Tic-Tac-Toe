@@ -9,6 +9,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   height: 100vh;
   display: flex;
@@ -17,21 +18,33 @@ body {
   align-items: center;
   background-color: var(--base);
 }
+
 .grid {
   width: 40%;
+  min-width: 500px;
   height: 80%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 2em;
 }
 
-.grid div {
+.grid .box {
   background-color: var(--base-light);
   outline: 1px solid rgb(204, 200, 200);
-
-  height: 100%;
+  width: 100%;
+  height: initial;
+  display: grid;
+  align-content: center;
+  position: relative;
 }
-
+.box img {
+  position: absolute;
+  height: 90px;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .new-game {
   outline: none;
   border: none;
@@ -42,9 +55,15 @@ body {
   font-size: 1.4rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .grid {
-    width: 70%;
+    min-width: 350px;
     height: 60%;
   }
+}
+
+/* hidden class */
+
+.hidden {
+  display: none;
 }
