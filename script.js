@@ -1,32 +1,38 @@
 class TicTacToe {
-  _clicks = 0;
-  _winningCombinations = [
-    [1, 2, 3],
-    [3, 6, 9],
-    [7, 8, 9],
-    [1, 4, 7],
-    [1, 5, 9],
-    [4, 5, 6],
-    [7, 8, 9],
-    [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 7, 9],
-  ];
-
-  _player1 = {
-    name: 'player 1',
-    moves: [],
-  };
-  _player2 = {
-    name: 'player 2',
-    moves: [],
-  };
+  _grid = document.querySelector('.grid');
 
   constructor() {
-    grid.addEventListener('click', (e) => {
+    this._init();
+    this._grid.addEventListener('click', (e) => {
       this._loadSign(e);
     });
+    document
+      .querySelector('.new-game')
+      .addEventListener('click', this._newGame.bind(this));
+  }
+
+  _init() {
+    this._clicks = 0;
+    this._winningCombinations = [
+      [1, 2, 3],
+      [3, 6, 9],
+      [7, 8, 9],
+      [1, 4, 7],
+      [1, 5, 9],
+      [4, 5, 6],
+      [7, 8, 9],
+      [2, 5, 8],
+      [3, 5, 7],
+    ];
+
+    this._player1 = {
+      name: 'X',
+      moves: [],
+    };
+    this._player2 = {
+      name: 'O',
+      moves: [],
+    };
   }
 
   _loadSign(e) {
@@ -35,8 +41,8 @@ class TicTacToe {
 
     this._clicks++;
 
-    if (this._clicks % 2 === 0) this._addSign(clicked, 'cross');
-    else this._addSign(clicked, 'zero');
+    if (this._clicks % 2 === 0) this._addSign(clicked, 'zero');
+    else this._addSign(clicked, 'cross');
   }
 
   _addSign = function (clickedBox, sign) {
@@ -46,6 +52,7 @@ class TicTacToe {
     if (img) return;
 
     const markup = this._generateMarkup(sign);
+
     clickedBox.insertAdjacentHTML('afterbegin', markup);
 
     const id = Number(clickedBox.dataset.id);
@@ -66,17 +73,21 @@ class TicTacToe {
 
     if (player.length < 3) return;
 
+    // Check for win
     this._winningCombinations.forEach((comb) => {
-      if (_.isEqual(comb, player.moves.sort())) alert(`${player.name} won`);
+      if (comb.every((v) => player.moves.includes(v))) {
+        setTimeout(() => {
+          alert(`${player.name} won 👏😎`);
+        }, 400);
+      }
     });
+  }
+
+  _newGame() {
+    this._init();
+    const allBox = document.querySelectorAll('.box');
+    allBox.forEach((box) => (box.innerHTML = ''));
   }
 }
 
-const grid = document.querySelector('.grid');
-
 const ticTacToe = new TicTacToe();
-
-// const a1 = [1, 2, 3];
-// const a2 = [3, 2, 1];
-
-// console.log(_.isEqual(a1.sort(), a2.sort()));
