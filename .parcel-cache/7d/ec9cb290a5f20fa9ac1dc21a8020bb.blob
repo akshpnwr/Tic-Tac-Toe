@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="055f334ca1e721b2a8843f7f568a5a7c">
+    <script src="281a407a5a9fde2c0967eee230076492"></script>
+    <script defer="" src="365c3c0b16991968505fc2bc53ec9aa7"></script>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="box" data-id="1"></div>
+      <div class="box" data-id="2"></div>
+      <div class="box" data-id="3"></div>
+      <div class="box" data-id="4"></div>
+      <div class="box" data-id="5"></div>
+      <div class="box" data-id="6"></div>
+      <div class="box" data-id="7"></div>
+      <div class="box" data-id="8"></div>
+      <div class="box" data-id="9"></div>
+    </div>
+    <button class="new-game">New game</button>
+  </body>
+</html>

@@ -66,7 +66,7 @@ class TicTacToe {
     return this._clicks % 2 === 0 ? this._player2 : this._player1;
   }
 
-  _generateMarkup = (sign) => `<img src="svg/${sign}.svg" alt="" />`;
+  _generateMarkup = (sign) => `<img src="img/${sign}.svg" alt="" />`;
 
   _checkWin() {
     const player = this._getPlayer();
@@ -78,7 +78,7 @@ class TicTacToe {
       if (comb.every((v) => player.moves.includes(v))) {
         setTimeout(() => {
           alert(`${player.name} won 👏😎`);
-        }, 400);
+        }, 300);
       }
     });
   }
